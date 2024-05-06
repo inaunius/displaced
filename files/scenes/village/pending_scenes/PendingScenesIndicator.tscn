@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://files/scenes/village/pending_scenes/PendingScenesIndicator.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/gui/exclamation.png" type="Texture" id=2]
+[ext_resource path="res://files/SFX/Outline.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/_thickness = 0.029
+shader_param/_occlude = -0.248
+shader_param/_animation_speed = 6.0
+shader_param/_color = Color( 1, 0.631373, 0, 1 )
+shader_param/_extend_bounds = false
+
+[node name="PendingScenesIndicator" type="TextureRect"]
+material = SubResource( 1 )
+margin_right = 134.0
+margin_bottom = 123.0
+rect_scale = Vector2( 0.832809, 0.77194 )
+texture = ExtResource( 2 )
+flip_h = true
+script = ExtResource( 1 )

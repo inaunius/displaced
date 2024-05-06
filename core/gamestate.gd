@@ -9,6 +9,9 @@ extends Node
 #var activequests := []
 #var completedquests := []
 
+signal pending_scenes_updated
+
+
 var difficulty = 'normal'
 
 var votelinksseen = false
@@ -48,6 +51,8 @@ var OldEvents := {}
 #var gallery_event_unlocks = []
 var CurEvent := "" #event name
 var CurBuild := ""
+
+var pending_scenes = []
 
 #Progress
 var decisions := []
@@ -259,6 +264,13 @@ func unlock_path(path, is_abg):
 #		if item.type == 'abg' and !is_abg: continue
 #		if item.type == 'bg' and is_abg: continue
 #		gallery_unlocks[i] = true
+func update_pending_scenes(scenes: Array):
+	pending_scenes = scenes
+	emit_signal("pending_scenes_updated")
+
+func clear_pending_scenes():
+	pending_scenes.clear()
+	emit_signal("pending_scenes_updated")
 
 
 func get_choice(choice):
@@ -436,6 +448,9 @@ func serialize():
 #	tmp['effects'] = effects_pool.serialize()
 	if !effects_pool.serialize().empty():
 		print("!!!!!ALERT!!!!! There are effects for save!")
+	
+	tmp["PENDING_SCENES"] = pending_scenes
+	
 	return tmp
 
 func deserialize(tmp:Dictionary):
@@ -496,6 +511,9 @@ func deserialize(tmp:Dictionary):
 	else:
 		input_handler.curtains.hide_anim(variables.CURTAIN_SCENE)
 #	input_handler.map_node.update_map()
+	
+	if tmp.has("PENDING_SCENES"):
+		pending_scenes = tmp["PENDING_SCENES"] 
 
 func cleanup():
 	for ch in heroes.keys().duplicate():

@@ -1,0 +1,8 @@
+res://localization/unused/tr.en.translation
+res://files/scenes/Menu.tscn
+res://assets/themes/Checkbox&Tabs.tres
+res://assets/themes/options_hotkey.tres
+res://assets/themes/button_small.tres
+res://assets/themes/button_base.tres
+res://core/variables.gd
+res://core/ResourceLoader.gd

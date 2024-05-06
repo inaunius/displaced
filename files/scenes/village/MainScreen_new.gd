@@ -123,7 +123,7 @@ func on_hide_anim_finish() ->void:
 
 
 
-func show():
+func show():	
 	buildscreen()
 	state.CurrentScreen = 'Village'
 #	globals.CurrentScene = self
