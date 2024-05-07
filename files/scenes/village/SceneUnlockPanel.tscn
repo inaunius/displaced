@@ -41,9 +41,6 @@ margin_top = 31.0
 margin_right = 1888.0
 margin_bottom = 945.0
 texture = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="hero" type="TextureRect" parent="panel_hero"]
 margin_left = 35.0
@@ -63,9 +60,6 @@ margin_top = 45.0
 margin_right = 1216.0
 margin_bottom = 945.0
 texture = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="heroes" type="ScrollContainer" parent="Panel"]
 margin_left = 20.0
@@ -143,8 +137,8 @@ theme = ExtResource( 12 )
 scroll_horizontal_enabled = false
 
 [node name="GridContainer" type="GridContainer" parent="Panel/scenes"]
-margin_right = 1100.0
-margin_bottom = 922.0
+margin_right = 360.0
+margin_bottom = 456.0
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 3
@@ -154,27 +148,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 360.0
 margin_bottom = 456.0
-
-[node name="Button2" parent="Panel/scenes/GridContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 370.0
-margin_right = 730.0
-margin_bottom = 456.0
-
-[node name="Button3" parent="Panel/scenes/GridContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 740.0
-margin_right = 1100.0
-margin_bottom = 456.0
-
-[node name="Button4" parent="Panel/scenes/GridContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 466.0
-margin_right = 360.0
-margin_bottom = 922.0
 
 [node name="close" type="Button" parent="."]
 margin_left = 858.0

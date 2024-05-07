@@ -1,8 +1,12 @@
 extends combatant
 class_name hero
 
+
+signal friend_points_changed(points)
+
+
 var unlocked = false setget set_unlocked
-var friend_points = 0
+var friend_points = 0 setget _set_friend_points
 var friend_points_new = 0
 
 var recentlevelups = 0
@@ -31,6 +35,7 @@ func set_unlocked(value):
 	if !value:
 		position = null
 		input_handler.emit_signal("PositionChanged")
+
 
 
 func createfromname(name):
@@ -380,3 +385,7 @@ func try_rest():
 	if defeated or position != null:
 		return
 	heal(get_stat('hpmax') * 0.25)
+
+func _set_friend_points(points: int):
+	friend_points = points
+	emit_signal("friend_points_changed", points)

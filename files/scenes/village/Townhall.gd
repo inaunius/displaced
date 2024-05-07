@@ -4,6 +4,7 @@ var selectedworker
 var selectedupgrade
 
 var binded_events = {}
+
 onready var charpanel = $UpcomingEvents/ScrollContainer/HBoxContainer
 onready var upgrade_list = $UpgradeList/ScrollContainer/VBoxContainer
 onready var upgrade_desc = $UpgradeList/UpgradeDescript
